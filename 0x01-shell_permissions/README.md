@@ -1,0 +1,1 @@
+This project is to understand what is the shell permissions, how to use its commands and apply  those commands effectively.
