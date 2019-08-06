@@ -18,19 +18,13 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
-Host ubuntu@35.196.125.111
-     User ubuntu
-     HostName 35.196.125.111
-     IdentityFile ~/.ssh/holberton
-     PasswordAuthentication no
-
 Host *
 #   ForwardAgent no
 #   ForwardX11 no
 #   ForwardX11Trusted yes
 #   RhostsRSAAuthentication no
 #   RSAAuthentication yes
-#   PasswordAuthentication yes
+    PasswordAuthentication no
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
 #   GSSAPIDelegateCredentials no
@@ -60,3 +54,4 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/holberton
