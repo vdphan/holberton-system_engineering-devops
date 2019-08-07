@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#fix docker contaner issue
+#return a page containing Hello Holberton when querying the root of it
+service apache2 start
