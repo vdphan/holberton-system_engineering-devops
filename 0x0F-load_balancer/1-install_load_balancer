@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # A bash script that Install and configure HAproxy on your lb-01 server
-apt-get install software-properties-common
-add-apt-repository ppa:vbernat/haproxy-2.0
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
-apt-get install haproxy=2.0.\*
+apt-get -y install haproxy=2.0.\*
 printf "\nfrontend www\n\
 \tbind *:80\n\
 \tmode http\n\
