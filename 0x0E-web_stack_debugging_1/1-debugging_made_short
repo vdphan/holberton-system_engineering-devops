@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 #fix problem with listening to port 80
-sudo apt-get install  -y apache2
+sudo apt-get install -y apache2
 sudo cp /usr/share/nginx/html/index.html /var/www/html/index.html
+echo "HttpProtocolOptions unsafe" >> /etc/apache2/apache2.conf
 sudo service apache2 start
+
