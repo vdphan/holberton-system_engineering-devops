@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# A Bash script that configures your domain zone so that the subdomain www points to your load-balancer IP (lb-01)
+a="www"
+b="lb-01"
+c="web-01"
+d="web-02"
+function do_config {
+    if [ "$#" -eq 1 ]
+    then
+	r1=$(dig $a.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $4}')
+        i1=$(dig $a.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $5}')
+	echo "The subdomain $a is a $r1 record and points to $i1"
+	r2=$(dig $b.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $4}')
+	i2=$(dig $b.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $5}')
+	echo "The subdomain $b is a $r2 record and points to $i2"
+	r3=$(dig $c.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $4}')
+	i3=$(dig $c.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $5}')
+	echo "The subdomain $c is a $r3 record and points to $i3"
+	r4=$(dig $d.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $4}')
+	i4=$(dig $d.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $5}')
+	echo "The subdomain $d is a $r4 record and points to $i4"
+    elif [ "$#" -eq 2 ]
+    then
+        r5=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $4}')
+	i5=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{printf "%s", $5}')
+	echo "The subdomain $2 is a $r5 record and points to $i5"
+    fi
+}
+do_config $1 $2
