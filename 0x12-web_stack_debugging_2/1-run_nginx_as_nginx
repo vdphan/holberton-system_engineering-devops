@@ -2,6 +2,6 @@
 # a Bash script that fix container so that Nginx is running as the nginx user
 pkill apache2
 chmod -R 777 /etc/nginx/
-sed -i "1 i\user nginx;" /etc/nginx/nginx.conf
+sed -i "s\#user www-data\user nginx" /etc/nginx/nginx.conf
 sed -i "s\80\8080" /etc/nginx/sites-available/default
 sudo -u nginx nginx -c /etc/nginx/nginx.conf
