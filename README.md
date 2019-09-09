@@ -1,1 +1,1 @@
-This project is to research, learn and understand deeply about bash script and its command.
+This project is to research, learn and understand deeply about bash script, devops and its command.
