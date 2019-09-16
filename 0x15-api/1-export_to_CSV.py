@@ -16,5 +16,5 @@ if __name__ == "__main__":
     with open(fname, "w") as csvfile:
         c = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
         for task in r1:
-            c.writerow([r['id'], r['username'], task["completed"],
-                        task["title"]])
+            c.writerow([r.get('id'), r.get('username'), task.get("completed"),
+                        task.get("title")])

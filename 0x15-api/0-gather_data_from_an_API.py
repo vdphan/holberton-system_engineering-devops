@@ -15,10 +15,10 @@ if __name__ == "__main__":
     l = []
     c = 0
     for i in range(len(r1)):
-        if r1[i]["completed"] is True:
+        if r1[i].get("completed") is True:
             c = c + 1
-            l.append(r1[i]["title"])
+            l.append(r1[i].get("title"))
     print('Employee {} is done with tasks({}/{}):'.
-          format(r['name'], c, len(r1)))
+          format(r.get('name'), c, len(r1)))
     for task in l:
         print("\t {}".format(task))
