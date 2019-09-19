@@ -7,8 +7,9 @@ import requests
 
 def number_of_subscribers(subreddit):
     """returns the number of subscribers"""
-    r = requests.get('https://www.reddit.com/r/programming/about.json')
-    if r:
+    r = requests.get('https://www.reddit.com/r/{}/about.json'.
+                     format(subreddit))
+    if r.status_code == 200 and r.json().get('data').get('subscribers'):
         return r.json().get('data').get('subscribers')
     else:
         return 0
