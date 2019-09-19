@@ -37,7 +37,7 @@ def count_words(subreddit, word_list, a=None, d={}):
                     t_list_2.append(y.lower())
             for word in low_list:
                 if word not in t_list_2:
-                    print
+                    continue
                 else:
                     for t in t_list_2:
                         if t == word:
@@ -49,7 +49,10 @@ def count_words(subreddit, word_list, a=None, d={}):
             return count_words(subreddit, word_list,
                                r.json().get('data').get('after'), d)
         else:
-            for k, v in sorted(d.items(), key=lambda x: (-x[1], x[0])):
-                print("{}: {}".format(k, v))
+            if len(d) == 0:
+                print
+            else:
+                for k, v in sorted(d.items(), key=lambda x: (-x[1], x[0])):
+                    print("{}: {}".format(k, v))
     else:
         print
