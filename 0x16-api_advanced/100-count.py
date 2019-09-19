@@ -34,7 +34,7 @@ def count_words(subreddit, word_list, a=None, d={}):
                     print
                 else:
                     for t in t_list:
-                        if t == word and len(t) == len(word):
+                        if t == word:
                             if word not in d:
                                 d[word] = 1
                             else:
