@@ -28,7 +28,7 @@ def count_words(subreddit, word_list, a=None, d={}):
                     print
                 else:
                     for t in t_list:
-                        if t == word.lower():
+                        if t == word.lower() and len(t) == len(word):
                             if word not in d:
                                 d[word.lower()] = 1
                             else:
