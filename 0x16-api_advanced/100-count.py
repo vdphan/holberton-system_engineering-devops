@@ -28,12 +28,18 @@ def count_words(subreddit, word_list, a=None, d={}):
         c = r.json().get('data').get('children')
         l = len(c)
         for i in range(0, l):
-            t_list = c[i].get('data').get('title').lower().split()
+            t_list = c[i].get('data').get('title').split()
+            t_list_2 = []
+            for y in t_list:
+                if y == "Java":
+                    t_list_2.append(y)
+                else:
+                    t_list_2.append(y.lower())
             for word in low_list:
-                if word not in t_list:
+                if word not in t_list_2:
                     print
                 else:
-                    for t in t_list:
+                    for t in t_list_2:
                         if t == word:
                             if word not in d:
                                 d[word] = 1
