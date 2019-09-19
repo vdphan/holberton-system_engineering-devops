@@ -18,21 +18,27 @@ def count_words(subreddit, word_list, a=None, d={}):
     r = requests.get('https://www.reddit.com/r/{}/hot.json?after={}'.
                      format(subreddit, a),
                      headers=headers, allow_redirects=False)
+    low_list = []
+    for x in word_list:
+        if x == "Java":
+            low_list.append(x)
+        else:
+            low_list.append(x.lower())
     if r.status_code == 200 and r.json().get('data').get('children'):
         c = r.json().get('data').get('children')
         l = len(c)
         for i in range(0, l):
             t_list = c[i].get('data').get('title').lower().split()
-            for word in word_list:
-                if word.lower() not in t_list:
+            for word in low_list:
+                if word not in t_list:
                     print
                 else:
                     for t in t_list:
-                        if t == word.lower() and len(t) == len(word):
+                        if t == word and len(t) == len(word):
                             if word not in d:
-                                d[word.lower()] = 1
+                                d[word] = 1
                             else:
-                                d[word.lower()] += 1
+                                d[word] += 1
         if r.json().get('data').get('after'):
             return count_words(subreddit, word_list,
                                r.json().get('data').get('after'), d)
