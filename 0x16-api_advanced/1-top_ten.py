@@ -13,7 +13,7 @@ def top_ten(subreddit):
     (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
     (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"}"""
     r = requests.get('https://www.reddit.com/r/{}/hot.json'.
-                     format(subreddit), headers=headers)
+                     format(subreddit))
     if r.status_code == 200 and r.json().get('data').get('children'):
         c = r.json().get('data').get('children')
         l = len(c)
