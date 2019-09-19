@@ -24,15 +24,15 @@ def count_words(subreddit, word_list, a=None, d={}):
         for i in range(0, l):
             t_list = c[i].get('data').get('title').lower().split()
             for word in word_list:
-                if word not in t_list:
+                if word.lower() not in t_list:
                     print
                 else:
                     for t in t_list:
-                        if t == word:
+                        if t == word.lower():
                             if word not in d:
-                                d[word] = 1
+                                d[word.lower()] = 1
                             else:
-                                d[word] += 1
+                                d[word.lower()] += 1
         if r.json().get('data').get('after'):
             return count_words(subreddit, word_list,
                                r.json().get('data').get('after'), d)
