@@ -26,6 +26,10 @@ This repository contains projects written in Bash Script for the System Engineer
 | [0x0D. Web Stack Debugging #0 ](./0x0D-web_stack_debugging_0) | Debugging Apache servers running on Docker container |
 | [0x0E. Web Stack Debugging #1 ](./0x0E-web_stack_debugging_1) | Debugging an NGINX server to listen to port 80 |
 | [0x0F. Load Balancer](./0x0F-load_balancer) | Install and create Load balancing on HAProxy servers |
+| [0x16. api_advanced](./0x16-api_advanced) | Practicing with Reddit APIs |
+| [0x17. Web stack debugging #3](./0x17-web_stack_debugging_3) | Introducing to Wordpress and using strace to debugging |
+| [0x18. Webstack monitoring](./0x18-webstack_monitoring) | Introducing to Datadog and learn how to monitor system with it |
+
 
 ## Author
 
