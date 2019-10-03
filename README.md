@@ -29,7 +29,7 @@ This repository contains projects written in Bash Script for the System Engineer
 | [0x16. api_advanced](./0x16-api_advanced) | Practicing with Reddit APIs |
 | [0x17. Web stack debugging #3](./0x17-web_stack_debugging_3) | Introducing to Wordpress and using strace to debugging |
 | [0x18. Webstack monitoring](./0x18-webstack_monitoring) | Introducing to Datadog and learn how to monitor system with it |
-
+| [0x19. Postmortem](./0x19-postmortem) | Practicing how to write a postmortem |
 
 ## Author
 
