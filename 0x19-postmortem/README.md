@@ -5,7 +5,7 @@ What you should learn from this project:
 - How to write a postmortem
 ---
 
-### [0. My first postmortem](./README.md)
+### [0. My first postmortem](https://docs.google.com/document/d/1H02eAIaUSJuw5LY4pct-PxajO6PmdJMiv5cG0SCFzs8/edit)
 Requirements:
 
 - Issue Summary (that is often what executives will read) must contain:
