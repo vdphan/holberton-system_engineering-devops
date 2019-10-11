@@ -4,7 +4,7 @@ exec { 'delete holberton user':
     path    => '/bin/',
 }
 
-exec { 'delete holberton user':
+exec { 'delete holberton user soft':
     command => "sed -i '/holberton soft nofile 4/d' /etc/security/limits.conf",
     path    => '/bin/',
 }
